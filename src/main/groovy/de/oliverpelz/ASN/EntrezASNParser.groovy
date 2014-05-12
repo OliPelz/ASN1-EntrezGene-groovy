@@ -1,7 +1,7 @@
 package groovy
 
 class EntrezASNParser {
-	static parseRecord(String content) {
+	static String parseRecord(String content) {
 		def dataStruct = [:]
 		return parseRecursive(content, dataStruct);
 	
@@ -10,13 +10,13 @@ class EntrezASNParser {
 	static parseRecursive(content, dataStruct) {
 		for(String line : content.split("\n")) {
 			if(line =~ /^(.*)({})$/) {
-				def word = $1;
-				def brak = $2;
+				//def word = $1;
+				//def brak = $2;
 			}
 			
 		}
 	}
-	static parseFile(File file) {
+	static String parseFile(File file) {
 		 //Scanner scanner = new Scanner( new File("EastOfJava.txt") );
 		 	
 	}

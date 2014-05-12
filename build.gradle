@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+ 
+def langLevel = 1.7
+ 
+sourceCompatibility = langLevel
+targetCompatibility = langLevel
+ 
+group = 'de.oliverpelz.ASN'
+version = '0.1'
+ 
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'http://oss.sonatype.org/content/repositories/snapshots/' }
+}
+ 
+dependencies {
+    groovy 'org.codehaus.groovy:groovy-all:2.0.1'
+    testCompile 'junit:junit:4.10'
+}
+ 
+idea {
+    project {
+        jdkName = langLevel
+        languageLevel = langLevel
+    }
+}
+/*task uberjar(type: Jar,dependsOn:[':compileJava',':compileGroovy']) {
+    from files(sourceSets.main.output.classesDir)
+    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}*/

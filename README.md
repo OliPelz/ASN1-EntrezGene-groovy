@@ -12,5 +12,6 @@ Installation
 Run Tests
 
 Usage
-
+gradle build
+gradle test
 
