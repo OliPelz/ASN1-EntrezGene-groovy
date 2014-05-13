@@ -1,15 +1,20 @@
 package groovy
 
 class EntrezASNParser {
+
+	static String LINEMATCHER = /^\s*(.*)\s{0,1}(.*)([{}])$/;
 	static String parseRecord(String content) {
 		def dataStruct = [:]
+		//Todo : get rid of first 'Entrezgene ::= {' and last '}'
+		//content =~ /^Entrezgene ::=//
 		return parseRecursive(content, dataStruct);
 	
 	}
 	//this is the main parsing function (ASN is a JSON like object)
 	static parseRecursive(content, dataStruct) {
 		for(String line : content.split("\n")) {
-			if(line =~ /^(.*)({})$/) {
+			def matcher = (line =~ LINEMATCHER)
+			if(matcher.matches()) {
 				//def word = $1;
 				//def brak = $2;
 			}

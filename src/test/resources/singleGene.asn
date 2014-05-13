@@ -1,0 +1,1111 @@
+Entrezgene ::= {
+  track-info {
+    geneid 1 ,
+    status live ,
+    create-date
+      std {
+        year 2003 ,
+        month 8 ,
+        day 28 ,
+        hour 20 ,
+        minute 30 ,
+        second 0 } ,
+    update-date
+      std {
+        year 2005 ,
+        month 3 ,
+        day 19 ,
+        hour 10 ,
+        minute 30 ,
+        second 0 } } ,
+  type protein-coding ,
+  source {
+    genome genomic ,
+    origin natural ,
+    org {
+      taxname "Homo sapiens" ,
+      common "human" ,
+      db {
+        {
+          db "taxon" ,
+          tag
+            id 9606 } } ,
+      syn {
+        "man" } ,
+      orgname {
+        name
+          binomial {
+            genus "Homo" ,
+            species "sapiens" } ,
+        lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Catarrhini;
+ Hominidae; Homo" ,
+        gcode 1 ,
+        mgcode 2 ,
+        div "PRI" } } ,
+    subtype {
+      {
+        subtype chromosome ,
+        name "19" } } } ,
+  gene {
+    locus "A1BG" ,
+    desc "alpha-1-B glycoprotein" ,
+    maploc "19q13.4" ,
+    db {
+      {
+        db "MIM" ,
+        tag
+          id 138670 } } ,
+    syn {
+      "A1B" ,
+      "ABG" ,
+      "GAB" ,
+      "HYST2477" ,
+      "DKFZp686F0970" } ,
+    locus-tag "HGNC:5" } ,
+  prot {
+    name {
+      "alpha 1B-glycoprotein" ,
+      "alpha-1B-glycoprotein" } } ,
+  summary "The protein encoded by this gene is a plasma glycoprotein of
+ unknown function. The protein shows sequence similarity to the variable
+ regions of some immunoglobulin supergene family member proteins." ,
+  location {
+    {
+      display-str "19q13.4" ,
+      method
+        map-type cyto } } ,
+  gene-source {
+    src "LocusLink" ,
+    src-int 1 ,
+    src-str2 "1" ,
+    gene-display FALSE ,
+    locus-display FALSE ,
+    extra-terms FALSE } ,
+  locus {
+    {
+      type genomic ,
+      heading "Reference" ,
+      accession "NC_000019" ,
+      version 8 ,
+      seqs {
+        int {
+          from 63548355 ,
+          to 63556668 ,
+          strand minus ,
+          id
+            gi 42406306 } } ,
+      products {
+        {
+          type mRNA ,
+          heading "Reference" ,
+          accession "NM_130786" ,
+          version 2 ,
+          genomic-coords {
+            mix {
+              int {
+                from 63548355 ,
+                to 63550206 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63550530 ,
+                to 63550817 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63553547 ,
+                to 63553828 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63554568 ,
+                to 63554864 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63555460 ,
+                to 63555732 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63556105 ,
+                to 63556374 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63556469 ,
+                to 63556504 ,
+                strand minus ,
+                id
+                  gi 42406306 } ,
+              int {
+                from 63556581 ,
+                to 63556668 ,
+                strand minus ,
+                id
+                  gi 42406306 } } } ,
+          seqs {
+            whole
+              gi 21071029 } ,
+          products {
+            {
+              type peptide ,
+              heading "Reference" ,
+              accession "NP_570602" ,
+              version 2 ,
+              genomic-coords {
+                packed-int {
+                  {
+                    from 63550199 ,
+                    to 63550206 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63550530 ,
+                    to 63550817 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63553547 ,
+                    to 63553828 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63554568 ,
+                    to 63554864 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63555460 ,
+                    to 63555732 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63556105 ,
+                    to 63556374 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63556469 ,
+                    to 63556504 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } ,
+                  {
+                    from 63556581 ,
+                    to 63556614 ,
+                    strand minus ,
+                    id
+                      gi 42406306 } } } ,
+              seqs {
+                whole
+                  gi 21071030 } } } } } } ,
+    {
+      type genomic ,
+      heading "Reference" ,
+      accession "NT_011109" ,
+      version 15 ,
+      seqs {
+        int {
+          from 31124733 ,
+          to 31133046 ,
+          strand minus ,
+          id
+            gi 29800594 } } ,
+      products {
+        {
+          type mRNA ,
+          heading "Reference" ,
+          accession "NM_130786" ,
+          version 2 ,
+          genomic-coords {
+            mix {
+              int {
+                from 31124733 ,
+                to 31126584 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31126908 ,
+                to 31127195 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31129925 ,
+                to 31130206 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31130946 ,
+                to 31131242 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31131838 ,
+                to 31132110 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31132483 ,
+                to 31132752 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31132847 ,
+                to 31132882 ,
+                strand minus ,
+                id
+                  gi 29800594 } ,
+              int {
+                from 31132959 ,
+                to 31133046 ,
+                strand minus ,
+                id
+                  gi 29800594 } } } ,
+          seqs {
+            whole
+              gi 21071029 } ,
+          products {
+            {
+              type peptide ,
+              heading "Reference" ,
+              accession "NP_570602" ,
+              version 2 ,
+              genomic-coords {
+                packed-int {
+                  {
+                    from 31126577 ,
+                    to 31126584 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31126908 ,
+                    to 31127195 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31129925 ,
+                    to 31130206 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31130946 ,
+                    to 31131242 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31131838 ,
+                    to 31132110 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31132483 ,
+                    to 31132752 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31132847 ,
+                    to 31132882 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } ,
+                  {
+                    from 31132959 ,
+                    to 31132992 ,
+                    strand minus ,
+                    id
+                      gi 29800594 } } } ,
+              seqs {
+                whole
+                  gi 21071030 } } } } } } ,
+    {
+      type genomic ,
+      heading "Reference" ,
+      accession "NT_086907" ,
+      version 1 ,
+      seqs {
+        int {
+          from 8163589 ,
+          to 8172398 ,
+          strand minus ,
+          id
+            gi 51475048 } } ,
+      products {
+        {
+          type mRNA ,
+          heading "Reference" ,
+          accession "NM_130786" ,
+          version 2 ,
+          genomic-coords {
+            mix {
+              int {
+                from 8163589 ,
+                to 8165440 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8165763 ,
+                to 8166050 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8169274 ,
+                to 8169555 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8170297 ,
+                to 8170593 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8171190 ,
+                to 8171462 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8171835 ,
+                to 8172104 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8172199 ,
+                to 8172234 ,
+                strand minus ,
+                id
+                  gi 51475048 } ,
+              int {
+                from 8172311 ,
+                to 8172398 ,
+                strand minus ,
+                id
+                  gi 51475048 } } } ,
+          seqs {
+            whole
+              gi 21071029 } ,
+          products {
+            {
+              type peptide ,
+              heading "Reference" ,
+              accession "NP_570602" ,
+              version 2 ,
+              genomic-coords {
+                packed-int {
+                  {
+                    from 8165433 ,
+                    to 8165440 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8165763 ,
+                    to 8166050 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8169274 ,
+                    to 8169555 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8170297 ,
+                    to 8170593 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8171190 ,
+                    to 8171462 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8171835 ,
+                    to 8172104 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8172199 ,
+                    to 8172234 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } ,
+                  {
+                    from 8172311 ,
+                    to 8172344 ,
+                    strand minus ,
+                    id
+                      gi 51475048 } } } ,
+              seqs {
+                whole
+                  gi 21071030 } } } } } } } ,
+  properties {
+    {
+      type comment ,
+      label "Nomenclature" ,
+      version 0 ,
+      source {
+        {
+          anchor "HUGO Gene Nomenclature Committee" } } ,
+      properties {
+        {
+          type property ,
+          label "Official Symbol" ,
+          text "A1BG" ,
+          version 0 } ,
+        {
+          type property ,
+          label "Official Full Name" ,
+          text "alpha-1-B glycoprotein" ,
+          version 0 } } } ,
+    {
+      type comment ,
+      heading "GeneOntology" ,
+      version 0 ,
+      source {
+        {
+          pre-text "Provided by" ,
+          anchor "GOA" ,
+          url "http://www.ebi.ac.uk/GOA/" } } ,
+      comment {
+        {
+          type comment ,
+          label "Function" ,
+          version 0 ,
+          comment {
+            {
+              type comment ,
+              version 0 ,
+              refs {
+                pmid 3458201 } ,
+              source {
+                {
+                  src {
+                    db "GO" ,
+                    tag
+                      id 5554 } ,
+                  anchor "molecular_function unknown" ,
+                  post-text "evidence: ND" } } } } } ,
+        {
+          type comment ,
+          label "Process" ,
+          version 0 ,
+          comment {
+            {
+              type comment ,
+              version 0 ,
+              source {
+                {
+                  src {
+                    db "GO" ,
+                    tag
+                      id 4 } ,
+                  anchor "biological_process unknown" ,
+                  post-text "evidence: ND" } } } } } ,
+        {
+          type comment ,
+          label "Component" ,
+          version 0 ,
+          comment {
+            {
+              type comment ,
+              version 0 ,
+              refs {
+                pmid 3458201 } ,
+              source {
+                {
+                  src {
+                    db "GO" ,
+                    tag
+                      id 5576 } ,
+                  anchor "extracellular region" ,
+                  post-text "evidence: IDA" } } } } } } } } ,
+  homology {
+    {
+      type comment ,
+      heading "Mouse, Rat" ,
+      version 0 ,
+      source {
+        {
+          src {
+            db "HomoloGene" ,
+            tag
+              id 11167 } ,
+          anchor "Map Viewer" ,
+          url "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&chr=19&
+MAPS=genes-r-org/rat-chr/human%3A19,genes-r-org/mouse-chr/human%3A19,genes-r-o
+rg/human-chr19&query=e%3A1[id]+AND+gene[obj_type]&QSTR=a1bg&cmd=focus&fill=10" } } } } ,
+  comments {
+    {
+      type comment ,
+      heading "LocusTagLink" ,
+      version 0 ,
+      source {
+        {
+          src {
+            db "HGNC" ,
+            tag
+              id 5 } } } } ,
+    {
+      type comment ,
+      heading "RefSeq Status" ,
+      label "REVIEWED" ,
+      version 0 } ,
+    {
+      type comment ,
+      version 0 ,
+      refs {
+        pmid 15461460 ,
+        pmid 15221005 ,
+        pmid 14702039 ,
+        pmid 12477932 ,
+        pmid 8889549 ,
+        pmid 3458201 ,
+        pmid 2591067 } } ,
+    {
+      type comment ,
+      heading "Markers (Sequence Tagged Sites/STS)" ,
+      version 0 ,
+      comment {
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "UniSTS" ,
+                tag
+                  id 89991 } ,
+              anchor "SHGC-67307" ,
+              post-text "(e-PCR)" } } ,
+          comment {
+            {
+              type other ,
+              label "Alternate name" ,
+              text "RH80032" ,
+              version 0 } ,
+            {
+              type other ,
+              label "Alternate name" ,
+              text "RH86145" ,
+              version 0 } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "UniSTS" ,
+                tag
+                  id 152074 } ,
+              anchor "D11S2921" ,
+              post-text "(e-PCR)" } } ,
+          comment {
+            {
+              type other ,
+              label "Alternate name" ,
+              text "GDB:461809" ,
+              version 0 } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "UniSTS" ,
+                tag
+                  id 155756 } ,
+              anchor "D10S16" ,
+              post-text "(e-PCR)" } } ,
+          comment {
+            {
+              type other ,
+              label "Alternate name" ,
+              text "D10S23" ,
+              version 0 } ,
+            {
+              type other ,
+              label "Alternate name" ,
+              text "GDB:193809" ,
+              version 0 } } } } } ,
+    {
+      type comment ,
+      heading "NCBI Reference Sequences (RefSeq)" ,
+      version 0 ,
+      products {
+        {
+          type mRNA ,
+          heading "mRNA Sequence" ,
+          accession "NM_130786" ,
+          version 2 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 21071029 } ,
+              anchor "NM_130786" } } ,
+          seqs {
+            whole
+              gi 21071029 } ,
+          products {
+            {
+              type peptide ,
+              heading "Product" ,
+              accession "NP_570602" ,
+              version 2 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 21071030 } ,
+                  anchor "NP_570602" ,
+                  post-text "alpha 1B-glycoprotein" } } ,
+              seqs {
+                whole
+                  gi 21071030 } ,
+              comment {
+                {
+                  type other ,
+                  heading "Consensus CDS (CCDS)" ,
+                  version 0 ,
+                  source {
+                    {
+                      src {
+                        db "CCDS" ,
+                        tag
+                          str "CCDS12976.1" } ,
+                      anchor "CCDS12976.1" } } } ,
+                {
+                  type other ,
+                  heading "Conserved Domains" ,
+                  version 0 ,
+                  source {
+                    {
+                      src {
+                        db "PROT_CDD" ,
+                        tag
+                          id 21071030 } ,
+                      pre-text "(1)" ,
+                      anchor "summary" } } ,
+                  comment {
+                    {
+                      type other ,
+                      version 0 ,
+                      source {
+                        {
+                          src {
+                            db "CDD" ,
+                            tag
+                              id 365 } ,
+                          anchor "smart00408: IGc2; Immunoglobulin C-2 Type" } } ,
+                      comment {
+                        {
+                          type other ,
+                          text "Location: 223 - 282  Blast Score: 103" ,
+                          version 0 } } } } } } } } ,
+          comment {
+            {
+              type other ,
+              heading "Source Sequence" ,
+              version 0 ,
+              source {
+                {
+                  src {
+                    db "Nucleotide" ,
+                    tag
+                      str "AF414429,AK055885,AK056201" } ,
+                  anchor "AF414429,AK055885,AK056201" } } ,
+              comment {
+                {
+                  type other ,
+                  version 0 } } } } } } } ,
+    {
+      type comment ,
+      heading "Related Sequences" ,
+      version 0 ,
+      products {
+        {
+          type genomic ,
+          heading "Genomic" ,
+          accession "AC010642" ,
+          version 5 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 9929687 } ,
+              anchor "AC010642" } } ,
+          seqs {
+            int {
+              from 41119 ,
+              to 43581 ,
+              strand plus ,
+              id
+                gi 9929687 } } ,
+          products {
+            {
+              type peptide ,
+              text "None" ,
+              version 0 } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "AB073611" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 51555784 } ,
+              anchor "AB073611" } } ,
+          seqs {
+            whole
+              gi 51555784 } ,
+          products {
+            {
+              type peptide ,
+              accession "BAD38648" ,
+              version 1 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 51555785 } ,
+                  anchor "BAD38648" } } ,
+              seqs {
+                whole
+                  gi 51555785 } } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "AF414429" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 15778555 } ,
+              anchor "AF414429" } } ,
+          seqs {
+            whole
+              gi 15778555 } ,
+          products {
+            {
+              type peptide ,
+              accession "AAL07469" ,
+              version 1 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 15778556 } ,
+                  anchor "AAL07469" } } ,
+              seqs {
+                whole
+                  gi 15778556 } } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "AK055885" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 16550723 } ,
+              anchor "AK055885" } } ,
+          seqs {
+            whole
+              gi 16550723 } ,
+          products {
+            {
+              type peptide ,
+              text "None" ,
+              version 0 } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "AK056201" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 16551539 } ,
+              anchor "AK056201" } } ,
+          seqs {
+            whole
+              gi 16551539 } ,
+          products {
+            {
+              type peptide ,
+              text "None" ,
+              version 0 } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "BC035719" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 23273475 } ,
+              anchor "BC035719" } } ,
+          seqs {
+            whole
+              gi 23273475 } ,
+          products {
+            {
+              type peptide ,
+              accession "AAH35719" ,
+              version 1 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 23273476 } ,
+                  anchor "AAH35719" } } ,
+              seqs {
+                whole
+                  gi 23273476 } } } } ,
+        {
+          type mRNA ,
+          heading "mRNA" ,
+          accession "BX537419" ,
+          version 1 ,
+          source {
+            {
+              src {
+                db "Nucleotide" ,
+                tag
+                  id 31873339 } ,
+              anchor "BX537419" } } ,
+          seqs {
+            whole
+              gi 31873339 } ,
+          products {
+            {
+              type peptide ,
+              accession "CAD97661" ,
+              version 1 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 31873340 } ,
+                  anchor "CAD97661" } } ,
+              seqs {
+                whole
+                  gi 31873340 } } } } ,
+        {
+          type other ,
+          text "None" ,
+          version 0 ,
+          products {
+            {
+              type peptide ,
+              accession "P04217" ,
+              version 0 ,
+              source {
+                {
+                  src {
+                    db "Protein" ,
+                    tag
+                      id 46577680 } ,
+                  anchor "P04217" } } ,
+              seqs {
+                whole
+                  gi 46577680 } } } } } } ,
+    {
+      type comment ,
+      heading "Additional Links" ,
+      version 0 ,
+      comment {
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "Evidence Viewer" ,
+                tag
+                  str "1" } ,
+              anchor "Evidence Viewer" ,
+              url "http://www.ncbi.nlm.nih.gov/sutils/evv.cgi?taxid=9606&conti
+g=NT_011109.15&gene=A1BG&lid=1&from=31124734&to=31133047" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "ModelMaker" ,
+                tag
+                  str "1" } ,
+              anchor "ModelMaker" ,
+              url "http://www.ncbi.nlm.nih.gov/mapview/modelmaker.cgi?taxid=96
+06&contig=NT_011109.15&gene=A1BG&lid=1" } } } ,
+        {
+          type comment ,
+          text "UniGene" ,
+          version 0 ,
+          xtra-properties {
+            {
+              tag "UNIGENE" ,
+              value "Hs.529161" } } ,
+          source {
+            {
+              src {
+                db "UniGene" ,
+                tag
+                  str "Hs.529161" } ,
+              anchor "Hs.529161" ,
+              url "http://www.ncbi.nlm.nih.gov/UniGene/clust.cgi?ORG=Hs&CID=52
+9161" } } } ,
+        {
+          type comment ,
+          text "MIM" ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "MIM" ,
+                tag
+                  str "138670" } ,
+              anchor "138670" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "HomoloGene" ,
+                tag
+                  str "1" } ,
+              anchor "HomoloGene" ,
+              url "http://www.ncbi.nlm.nih.gov/HomoloGene/homolquery.cgi?TEXT=
+1[loc]&TAXID=9606" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "AceView" ,
+                tag
+                  id 1 } ,
+              anchor "AceView" ,
+              url "http://www.ncbi.nlm.nih.gov/IEB/Research/Acembly/av.cgi?c=l
+ocusid&org=9606&l=1" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "GDB" ,
+                tag
+                  str "GDB:119638" } } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "Ensembl" ,
+                tag
+                  str "" } ,
+              url "http://www.ensembl.org/Homo_sapiens/contigview?geneid=AK055
+885" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "UCSC" ,
+                tag
+                  str "" } ,
+              url "http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=
+AK055885" } } } ,
+        {
+          type comment ,
+          version 0 ,
+          source {
+            {
+              src {
+                db "MGC" ,
+                tag
+                  str "BC035719" } ,
+              anchor "MGC" ,
+              url "http://mgc.nci.nih.gov/Genes/CloneList?ORG=Hs&LIST=BC035719" } } } } } ,
+    {
+      type generif ,
+      text "A1BG-cysteine-rich secretory protein 3 complex displays a similar
+ function in protecting the circulation from a potentially harmful effect of
+ free CRISP-3" ,
+      version 0 ,
+      refs {
+        pmid 15461460 } ,
+      create-date
+        str "Nov  6 2004 10:01AM" ,
+      update-date
+        str "Nov  6 2004  3:27PM" } } ,
+  unique-keys {
+    {
+      db "LocusID" ,
+      tag
+        id 1 } ,
+    {
+      db "MIM" ,
+      tag
+        id 138670 } } ,
+  xtra-index-terms {
+    "LOC1" } }
