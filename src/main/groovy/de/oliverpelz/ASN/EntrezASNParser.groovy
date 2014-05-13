@@ -1,8 +1,8 @@
-package groovy
+package de.oliverpelz.ASN
 
 class EntrezASNParser {
-
-	static String LINEMATCHER = /^\s*(.*)\s{0,1}(.*)([{}])$/;
+//test with http://www.regexplanet.com/advanced/java/index.html
+	static String LINEMATCHER = /^\s*([\w_-]*)\s{0,1}([\w_-]*)|(\"[\s\w_-]*\")(\s\{){0,1}(\s[{}])*(\s[,]){0,1}/;   //first group is the variable, second group is the value for the variable, third group is a bracket, fourth group is a comma
 	static String parseRecord(String content) {
 		def dataStruct = [:]
 		//Todo : get rid of first 'Entrezgene ::= {' and last '}'

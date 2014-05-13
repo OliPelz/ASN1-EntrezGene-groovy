@@ -1,4 +1,4 @@
-package groovy
+package de.oliverpelz.ASN
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -9,10 +9,28 @@ import org.junit.Before;
 
 class EntrezASNParserTest {
 
+	def regexp
 	def smallEntry
+	def weiredEntry
+	def groupClasses
+	
 	
 	@Before 
 	void setUp() {
+			regexp = EntrezASNParser.LINEMATCHER
+			
+			//currently the groups in our EntrezASNParser.LINEMATCHER have the following layout
+			//if you change the LINEMATCHER regexp, you have to change the groupClasses here as well
+			//this refers to the indices of the matcher elements
+			//that the tests pass!
+			groupClasses = [
+							k : 0, //k = key, this is the key of a dictionary based datastructure
+							v : 1,   //v = value of the dictionary based datastructure
+							c : 2,   // comma -> a possible comma
+							o : 3,  // opening braket
+							e : 4, // closing braket
+			]
+			
 	        smallEntry = """
 				Entrezgene ::= {
 					track-info {
@@ -26,6 +44,49 @@ class EntrezASNParserTest {
 				}
 			}
 		"""
+			weiredEntry = """
+					id
+            		gi 42406306 } } ,
+					"""
+	}
+	
+	@Test
+	public void testMainRegexpWorks() {
+		URL url = this.getClass().getResource("/match_count.txt");
+		def myTestFile = new File(url.getFile());
+		myTestFile.eachLine { myLine ->
+			if(myLine =~ /^#/) {  //skip lines with comments
+				return
+			}
+			def myLineMatcher = (myLine =~ /^'(.*)'(\t\w)*\t$/)
+			if(!myLineMatcher.matches()) {
+				fail('file with test cases cannot be loaded '+myLine)
+			}	
+			if(myLineMatcher[0].size() < 2) {  //if the line does not contain any further info about group's class
+				return  
+			}
+					
+			def lineContent = myLineMatcher[0][1];
+			
+			def matcherToTest = (lineContent =~ regexp)
+			if(!matcherToTest.matches()) {
+				fail("matcher regexp '${regexp}' does not match line : '${it}' at all!")
+			}
+			
+			for(def i = 1; i < myLineMatcher[0].size(); i++) {
+				def groupClass = matcher[0][i]
+				def matcherIdxDefined = groupClasses[groupClass] //get appropriate index on the matcher
+				if(!matcherToTest[0][matcherIdxDefined]) {
+					fail("matcher '${regexp}' is potentially wrong, cannot match the line '${myLine}'")
+				}				
+			}
+			
+			//now test against our matchers
+			
+			
+		}
+		
+	
 	}
 	
 	@Test
@@ -57,16 +118,19 @@ class EntrezASNParserTest {
 
 	@Test
 	public void testLineMatcherRegexp() {
-		def line = "track-info {"
-		def regexp = EntrezASNParser.LINEMATCHER;
-		def matcher = line =~ regexp;
+		def line = "track-info {"		
+		def matcher = (line =~ regexp);
 		assertTrue matcher.matches()
-		assertTrue matcher[0], is("track-infoX")
+		
+		assertThat matcher.getCount(),is(1)
+		assertThat((matcher[0].size()),is(5)) //we have four groups plus one -> the first group is always the full string
+		
+		assertThat matcher[0][0], equalTo("track-info")
 		line = "geneid 12345 ,"
 		matcher = line =~ regexp;
-		assertTrue matcher[0], is("geneid")
-		assertTrue matcher[1], is("12345")
-		assertTrue matcher[2], is(",")
+		assertTrue matcher[0][0], equalTo("geneid")
+		assertTrue matcher[0][1], equalTo("12345")
+		assertTrue matcher[0][2], equalTo(",")
 		
 	}
 

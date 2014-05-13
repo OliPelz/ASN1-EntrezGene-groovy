@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
+apply plugin: 'eclipse'
  
 def langLevel = 1.7
  
@@ -17,7 +18,7 @@ repositories {
  
 dependencies {
     groovy 'org.codehaus.groovy:groovy-all:2.0.1'
-    testCompile 'junit:junit:4.10'
+    testCompile 'junit:junit:4.11'
 	testCompile 'org.hamcrest:hamcrest-all:1.3'
 }
  
