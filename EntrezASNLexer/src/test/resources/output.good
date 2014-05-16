@@ -1,0 +1,7 @@
+line: 1 match: --Entrezgene ::=--
+action [70] { return (new Yytoken(0,yytext(),yyline,yychar,yychar+yylength())); }
+Text   : Entrezgene ::=
+index : 0
+line  : 0
+cBeg. : 0
+cEnd. : 13
