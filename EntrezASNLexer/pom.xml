@@ -27,13 +27,6 @@
             <goals>
               <goal>generate</goal>
             </goals>
-            <configuration>
-            <!-- does not work currently, always ends up in target/generated-sources/jflex/ -->
-              <outputDirectory>src/main/java</outputDirectory>
-              <lexDefinitions>
-                <lexDefinition>src/main/jflex</lexDefinition>
-              </lexDefinitions>
-            </configuration>  
           </execution>
         </executions>
       </plugin> 
@@ -50,7 +43,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/src/main/java</outputDirectory>
+              <outputDirectory>src/main/java/de/oliverpelz</outputDirectory>
               <resources>          
                 <resource>
                   <directory>target/generated-sources/jflex/</directory>

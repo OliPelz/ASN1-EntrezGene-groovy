@@ -11,7 +11,19 @@ this generates java source class lexer in
 ```sh
 src/main/java/de/oliverpelz/Lexer/EntrezASNLexer.java
 ```
-which we dann can compile for our project
+clean up some shit
 ```sh
+rm -rf target
+```
+
+summarized
+```sh
+
+mvn jflex:generate;mvn process-resources;rm -rf target
+```
+
+than we run the tests
+```sh
+mvn test
 
 ```
