@@ -43,7 +43,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>src/main/java/de/oliverpelz</outputDirectory>
+              <outputDirectory>src/main/java/</outputDirectory>
               <resources>          
                 <resource>
                   <directory>target/generated-sources/jflex/</directory>

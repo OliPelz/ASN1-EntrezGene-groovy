@@ -16,14 +16,17 @@ clean up some shit
 rm -rf target
 ```
 
-summarized
+summarized, how to rerun tests if sth. changed in the jflex script
 ```sh
-
-mvn jflex:generate;mvn process-resources;rm -rf target
+./run_tests.sh
 ```
 
 than we run the tests
 ```sh
 mvn test
 
+```
+manual debug of test output
+```sh
+cat target/output.actual  | grep -i Illegal
 ```

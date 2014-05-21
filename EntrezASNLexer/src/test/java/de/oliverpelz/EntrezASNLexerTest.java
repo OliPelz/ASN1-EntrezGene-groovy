@@ -17,12 +17,12 @@ import de.oliverpelz.*;
  * @author regis
  * 
  */
-public class YylexTest extends TestCase {
+public class EntrezASNLexerTest extends TestCase {
 
-	private static final String OUTPUT_FILE = "target/output.actual";
+	private static final String OUTPUT_FILE = "target/output-file1.asn.actual";
 
 	/**
-	 * Test that Yylex parser behaves like expected.
+	 * Test that E parser behaves like expected.
 	 * 
 	 * @throws IOException
 	 */
@@ -31,7 +31,7 @@ public class YylexTest extends TestCase {
 		argv[0] = "src/test/resources/file1.asn";
 
 		// the Yylex prints status on stdout
-		File actual = new File("target/output-file1.asn.actual");
+		File actual = new File(OUTPUT_FILE);  
 		actual.delete();
 		FileOutputStream fos = new FileOutputStream(OUTPUT_FILE, true);
 		System.setOut(new PrintStream(fos));
@@ -41,7 +41,7 @@ public class YylexTest extends TestCase {
 		fos.close();
 		
 		// test actual is expected
-		File expected = new File("src/test/resources/output-file1.asn.good");
+		File expected = new File("src/test/resources/expected-file1.asn.good");
 		assertTrue(expected.isFile());
 		assertTrue(actual.isFile());
 
