@@ -1,5 +1,5 @@
 /* this is the scanner playground for my upcoming ASN1 Entrezgene parser
-   (with small modifications to make it more readable) */
+   it is for testing out the correct lexer flex which will later will be called  EntrezASNLexer*/
 package de.oliverpelz;
 
 import de.oliverpelz.data.*;
@@ -15,7 +15,7 @@ import de.oliverpelz.data.*;
 %state COMMENT
 %full
 %public 
-%class EntrezASNLexer
+%class EntrezASNLexerPlayground
 %state STRING
 
 %debug

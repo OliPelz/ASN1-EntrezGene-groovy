@@ -17,7 +17,7 @@ import de.oliverpelz.*;
  * @author regis
  * 
  */
-public class EntrezASNLexerTest extends TestCase {
+public class EntrezASNLexerPlaygroundTest extends TestCase {
 
 	private static final String OUTPUT_FILE = "target/output-file1.asn.actual";
 
@@ -36,7 +36,7 @@ public class EntrezASNLexerTest extends TestCase {
 		FileOutputStream fos = new FileOutputStream(OUTPUT_FILE, true);
 		System.setOut(new PrintStream(fos));
 
-		EntrezASNLexer.main(argv);
+		EntrezASNLexerPlayground.main(argv);
 		
 		fos.close();
 		
