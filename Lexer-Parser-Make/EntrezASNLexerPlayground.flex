@@ -5,14 +5,9 @@ package de.oliverpelz;
 import de.oliverpelz.data.*;
 %%
   
-	
-%{
-  private int comment_count = 0;
-%} 
 
 %line
 %char
-%state COMMENT
 %full
 %public 
 %class EntrezASNLexerPlayground
