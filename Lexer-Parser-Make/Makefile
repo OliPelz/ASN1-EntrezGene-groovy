@@ -8,13 +8,15 @@ BYACCJ = yacc -J
 JAVAC  = javac
 JAVA   = java
 BUILDPATH = ./bin
-SRCPATH = ./src/main/java/de/oliverpelz
+SOURCEPATH = ./src/main/java
+SRCPATH = $(SOURCEPATH)/de/oliverpelz
 TESTPATH = ./src/test
 JUNITJARABSPATH =/usr/share/java/junit-4.10/junit-4.10.jar
-COMPILEOPTION=-d $(BUILDPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH)
+COMPILEOPTION=-d $(BUILDPATH) -sourcepath $(SOURCEPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH) 
 RUNOPTION=-classpath $(BUILDPATH):$(JUNITJARABSPATH)
 #we use this class for running junittests on the commandline
-JUNITTESTRUNNER=junit.textui.TestRunner   
+#for junit3: junit.textui.TestRunner
+JUNITTESTRUNNER=org.junit.runner.JUnitCore   
 JFLEXOPTIONS=-d $(SRCPATH)
 BYACCJOPTIONS=-Jclass=EntrezASNParser -Jpackage=de.oliverpelz
 #todo: add a target for building the jar file
@@ -51,7 +53,7 @@ EntrezASNLexerPlaygroundTest.class:
 	$(JAVAC) $(COMPILEOPTION) $(TESTPATH)/EntrezASNLexerPlaygroundTest.java
 
 EntrezASNParserTest.class:
-	$(JAVAC) $(COMPILEOPTION) $(TESTPATH)/EntrezASNLexerTest.java
+	$(JAVAC) $(COMPILEOPTION) $(TESTPATH)/EntrezASNParserTest.java
 
 EntrezASNParser.class: EntrezASNLexer.java EntrezASNParser.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNParserVal.java
