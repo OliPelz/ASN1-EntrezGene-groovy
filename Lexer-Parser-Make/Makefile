@@ -1,6 +1,6 @@
 # only works with 
 # jflex 1.5.1 installed in the system and 
-# the Java extension of yacc: 
+# AND the Java extension of yacc: 
 # byacc/j from http://troi.lincom-asg.com/~rjamison/byacc/
 
 JFLEX  = /usr/bin/jflex 
@@ -8,7 +8,8 @@ BYACCJ = yacc -J
 JAVAC  = javac
 JAVA   = java
 BUILDPATH = ./bin
-SRCPATH = ./src/de/oliverpelz
+SRCPATH = ./src/main/java/de/oliverpelz
+TESTPATH = ./src/test
 JUNITJARABSPATH =/usr/share/java/junit-4.10/junit-4.10.jar
 COMPILEOPTION=-d $(BUILDPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH)
 RUNOPTION=-classpath $(BUILDPATH):$(JUNITJARABSPATH)
@@ -33,7 +34,7 @@ TestLexerParser: EntrezASNParser.class EntrezASNParserTest.class
 
 #copies resources into the build folder
 CopyResources: Setup
-	cp -r $(SRCPATH)/test/resources $(BUILDPATH)
+	cp -r $(TESTPATH)/resources $(BUILDPATH)
 
 #this sets up the project folder
 Setup: 
@@ -47,10 +48,10 @@ EntrezASNLexerPlayground.class: EntrezASNLexerPlayground.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNLexerPlayground.java
 
 EntrezASNLexerPlaygroundTest.class:
-	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/test/EntrezASNLexerPlaygroundTest.java
+	$(JAVAC) $(COMPILEOPTION) $(TESTPATH)/EntrezASNLexerPlaygroundTest.java
 
 EntrezASNParserTest.class:
-	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/test/EntrezASNLexerTest.java
+	$(JAVAC) $(COMPILEOPTION) $(TESTPATH)/EntrezASNLexerTest.java
 
 EntrezASNParser.class: EntrezASNLexer.java EntrezASNParser.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNParserVal.java

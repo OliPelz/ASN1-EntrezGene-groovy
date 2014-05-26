@@ -19,7 +19,7 @@ import de.oliverpelz.*;
  */
 public class EntrezASNLexerPlaygroundTest extends TestCase {
 
-	private static final String OUTPUT_FILE = "classes/resources/output-file1.asn.actual";
+	private static final String OUTPUT_FILE = "bin/resources/output-file1.asn.actual";
 
 	/**
 	 * Test that E parser behaves like expected.
@@ -28,7 +28,7 @@ public class EntrezASNLexerPlaygroundTest extends TestCase {
 	 */
 	public void testOutput() throws IOException {
 		String[] argv = new String[1];
-		argv[0] = "classes/resources/file1.asn";
+		argv[0] = "bin/resources/file1.asn";
 
 		// the Yylex prints status on stdout
 		File actual = new File(OUTPUT_FILE);  
@@ -41,7 +41,7 @@ public class EntrezASNLexerPlaygroundTest extends TestCase {
 		fos.close();
 		
 		// test actual is expected
-		File expected = new File("classes/resources/expected-file1.asn.good");
+		File expected = new File("bin/resources/expected-file1.asn.good");
 		assertTrue(expected.isFile());
 		assertTrue(actual.isFile());
 
