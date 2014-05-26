@@ -12,10 +12,10 @@ package de.oliverpelz;
 
 %{
   /* store a reference to the parser object so we can access it in here*/
-  private parser yyparser;
+  private EntrezASNParser yyparser;
 
   /* constructor taking an additional parser object */
-  public Yylex(java.io.Reader r, parser yyparser) {
+  public EntrezASNLexer(java.io.Reader r, EntrezASNParser yyparser) {
     this(r);
     this.yyparser = yyparser;
   }
@@ -33,27 +33,27 @@ COMMA=[ ]*\,
 
 <YYINITIAL> {
   
-  "Entrezgene ::= {" { return parser.NEWGENE; }
+  "Entrezgene ::= {" { return EntrezASNParser.NEWGENE; }
   \"	{ yybegin(STRING); }
-  {MYEOL} { return parser.MYEOL;}  /*get rid of newlines and blanks at beginning of line*/
-  {DICTKEY} { yyparser.yylval = new parserval(yytext(); /*this is how we return lexical values*/
-  			  return parser.DICTKEY;	
+  {MYEOL} { return EntrezASNParser.MYEOL;}  /*get rid of newlines and blanks at beginning of line*/
+  {DICTKEY} { yyparser.yylval = new EntrezASNParserVal(yytext()); /*this is how we return lexical values*/
+  			  return EntrezASNParser.DICTKEY;	
   			}  
-  {NUMBER}  { yyparser.yylval = new parserval(Long.parseLong(yytext())
-  			  return parser.NUMBER;	
+  {NUMBER}  { yyparser.yylval = new EntrezASNParserVal(Long.parseLong(yytext()));
+  			  return EntrezASNParser.NUMBER;	
   			}  
-  {SINGLESPACE} { return parser.SINGLESPACE;} 
-  {OPENBRACKET} { return parser.OPENBRACKET;} 
-  {CLOSINGBRACKET} { return parser.CLOSINGBRACKET;} 
-  {COMMA} { return parser.COMMA;} 
+  {SINGLESPACE} { return EntrezASNParser.SINGLESPACE;} 
+  {OPENBRACKET} { return EntrezASNParser.OPENBRACKET;} 
+  {CLOSINGBRACKET} { return EntrezASNParser.CLOSINGBRACKET;} 
+  {COMMA} { return EntrezASNParser.COMMA;} 
   
   
 }
 <STRING> {
   \"    { yybegin(YYINITIAL);}    //end of string
-  [^\"]+ { yyparser.yylval = new parserval(yytext();
-  	       return parser.MYSTRING;
+  [^\"]+ { yyparser.yylval = new EntrezASNParserVal(yytext());
+  	       return EntrezASNParser.MYSTRING;
 		 }  
 }  
-.  { System.err.println("Error: unexpected character '"+yytext()+"'"); return parser.ERROR; }
+.  { System.err.println("Error: unexpected character '"+yytext()+"'"); return EntrezASNParser.ERROR; }
 

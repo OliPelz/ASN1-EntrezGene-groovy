@@ -8,6 +8,7 @@
 %token OPENBRACKET
 %token CLOSINGBRACKET
 %token COMMA
+%token ERROR
 
 %token <dval> DICTKEY  /* a key from a dictionary */
 %token <dval> MYSTRING  /* a value for a dictionary*/
@@ -17,12 +18,11 @@
 
 
       
-input:   NEWGENE | NUMBER
-       ;
+input:   NEWGENE | NUMBER;
 
 %%
   /* a reference to the lexer object */
-  private Yylex lexer;
+  private EntrezASNLexer lexer;
 
   /* interface to the lexer */
   private int yylex () {
@@ -42,13 +42,14 @@ input:   NEWGENE | NUMBER
   }
 
   /* lexer is created in the constructor */
-  /*public EntrezASNParser(Reader r) {
-    lexer = new Yylex(r, this);
-  }*/
+  public EntrezASNParser(Reader r) {
+    lexer = new EntrezASNLexer(r, this);
+  }
 
   /* that's how you use the parser */
+  /*
   public static void main(String args[]) throws IOException {
-    /*EntrezASNParser yyparser = new EntrezASNParser(new FileReader(args[0]));
-    yyparser.yyparse();    */
-  }
+    EntrezASNParser yyparser = new EntrezASNParser(new FileReader(args[0]));
+    yyparser.yyparse();    
+  }*/
 

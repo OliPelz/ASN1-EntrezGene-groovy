@@ -7,11 +7,10 @@ JFLEX  = /usr/bin/jflex
 BYACCJ = yacc -J
 JAVAC  = javac
 JAVA   = java
-BUILDPATH = ./classes
-SRCPATH = ./src
+BUILDPATH = ./bin
+SRCPATH = ./src/de/oliverpelz
 JUNITJARABSPATH =/usr/share/java/junit-4.10/junit-4.10.jar
-JFLEXJARABSPATH=/usr/lib/jflex-1.5.1.jar
-COMPILEOPTION=-d $(BUILDPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH):$(JFLEXJARABSPATH)
+COMPILEOPTION=-d $(BUILDPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH)
 RUNOPTION=-classpath $(BUILDPATH):$(JUNITJARABSPATH)
 #we use this class for running junittests on the commandline
 JUNITTESTRUNNER=junit.textui.TestRunner   
@@ -29,7 +28,7 @@ TestPlayground: EntrezASNLexerPlayground.class EntrezASNLexerPlaygroundTest.clas
 	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) EntrezASNLexerPlaygroundTest
 
 #the actual real Entrez ASN parser and lexer tests
-TestLexerParser: EntrezASNLexer.class EntrezASNParser.class EntrezASNParserTest.class
+TestLexerParser: EntrezASNParser.class EntrezASNParserTest.class
 	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) EntrezASNParserTest
 
 #copies resources into the build folder
@@ -41,7 +40,7 @@ Setup:
 	mkdir -p $(BUILDPATH)
 	
 
-TestContainer: src/data/Yytoken.java $(SRCPATH)/data/Utility.java
+TestContainer: $(SRCPATH)/data/Yytoken.java $(SRCPATH)/data/Utility.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/data/Yytoken.java $(SRCPATH)/data/Utility.java
 
 EntrezASNLexerPlayground.class: EntrezASNLexerPlayground.java
@@ -53,10 +52,7 @@ EntrezASNLexerPlaygroundTest.class:
 EntrezASNParserTest.class:
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/test/EntrezASNLexerTest.java
 
-EntrezASNLexer.class: EntrezASNLexer.java
-	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNLexer.java
-
-EntrezASNParser.class: EntrezASNParser.java
+EntrezASNParser.class: EntrezASNLexer.java EntrezASNParser.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNParserVal.java
 	$(JAVAC) $(COMPILEOPTION) $(SRCPATH)/EntrezASNParser.java
 
@@ -73,6 +69,6 @@ EntrezASNParser.java: EntrezASNParser.y
 
 
 clean:
-	rm -rf $(BUILDPATH)/* src/*~ src/EntrezASNLexerPlayground.java src/EntrezASNLexer.java src/EntrezASNParser.java src/EntrezASNParserVal.java 
+	rm -rf $(BUILDPATH)/* $(SRCPATH)/*~ $(SRCPATH)/EntrezASNLexerPlayground.java $(SRCPATH)/EntrezASNLexer.java $(SRCPATH)/EntrezASNParser.java $(SRCPATH)/EntrezASNParserVal.java 
 
 all: Setup
