@@ -35,7 +35,7 @@ COMMA=[ ]*\,
   
   "Entrezgene ::= {" { return EntrezASNParser.NEWGENE; }
   \"	{ yybegin(STRING); }
-  {MYEOL} { return EntrezASNParser.MYEOL;}  /*get rid of newlines and blanks at beginning of line*/
+  {MYEOL} { }  /*get rid of newlines and blanks at beginning of line*/
   {DICTKEY} { yyparser.yylval = new EntrezASNParserVal(yytext()); /*this is how we return lexical values*/
   			  return EntrezASNParser.DICTKEY;	
   			}  
@@ -45,7 +45,7 @@ COMMA=[ ]*\,
   {SINGLESPACE} { return EntrezASNParser.SINGLESPACE;} 
   {OPENBRACKET} { return EntrezASNParser.OPENBRACKET;} 
   {CLOSINGBRACKET} { return EntrezASNParser.CLOSINGBRACKET;} 
-  {COMMA} { return EntrezASNParser.COMMA;} 
+  {COMMA} { } 
   
   
 }

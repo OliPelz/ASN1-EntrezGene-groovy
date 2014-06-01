@@ -10,10 +10,11 @@ JAVA   = java
 BUILDPATH = ./bin
 SOURCEPATH = ./src/main/java
 SRCPATH = $(SOURCEPATH)/de/oliverpelz
-TESTPATH = ./src/test
+TESTPATH = ./src/test/de/oliverpelz
+RESOURCESPATH = ./src/test/resources
 JUNITJARABSPATH =/usr/share/java/junit-4.10/junit-4.10.jar
 COMPILEOPTION=-d $(BUILDPATH) -sourcepath $(SOURCEPATH) -classpath $(BUILDPATH)/.:$(JUNITJARABSPATH) 
-RUNOPTION=-classpath $(BUILDPATH):$(JUNITJARABSPATH)
+RUNOPTION=-classpath $(BUILDPATH)/.:$(JUNITJARABSPATH)
 #we use this class for running junittests on the commandline
 #for junit3: junit.textui.TestRunner
 JUNITTESTRUNNER=org.junit.runner.JUnitCore   
@@ -28,15 +29,15 @@ BYACCJOPTIONS=-Jclass=EntrezASNParser -Jpackage=de.oliverpelz
 test: CopyResources TestContainer TestPlayground TestLexerParser 
 
 TestPlayground: EntrezASNLexerPlayground.class EntrezASNLexerPlaygroundTest.class
-	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) EntrezASNLexerPlaygroundTest
+	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) de.oliverpelz.EntrezASNLexerPlaygroundTest
 
 #the actual real Entrez ASN parser and lexer tests
 TestLexerParser: EntrezASNParser.class EntrezASNParserTest.class
-	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) EntrezASNParserTest
+	$(JAVA) $(RUNOPTION) $(JUNITTESTRUNNER) de.oliverpelz.EntrezASNParserTest
 
 #copies resources into the build folder
 CopyResources: Setup
-	cp -r $(TESTPATH)/resources $(BUILDPATH)
+	cp -r $(RESOURCESPATH) $(BUILDPATH)
 
 #this sets up the project folder
 Setup: 

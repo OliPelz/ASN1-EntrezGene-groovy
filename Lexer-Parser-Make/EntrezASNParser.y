@@ -1,13 +1,12 @@
 %{
   import java.io.*;
+  import java.util.HashMap;
 %}
       
 %token NEWGENE          /* token marks the beginning of a new gene  */
-%token MYEOL    /* this is marking the end of a line and beginning of potential spaces in the new line*/
 %token SINGLESPACE
 %token OPENBRACKET
 %token CLOSINGBRACKET
-%token COMMA
 %token ERROR
 
 %token <dval> DICTKEY  /* a key from a dictionary */
@@ -16,13 +15,32 @@
       
 %%
 
+allGenes: gene
+	  | allGenes gene
 
-      
-input:   NEWGENE | NUMBER;
+gene: NEWGENE objs CLOSINGBRACKET {}
+
+objs: obj
+      | objs obj
+
+obj:  DICTKEY SINGLESPACE MYSTRING
+     | DICTKEY SINGLESPACE NUMBER
+     | DICTKEY SINGLESPACE DICTKEY
+     | DICTKEY
 
 %%
+  private int flushCounter; /*a counter for persisting in the database*/
+  private HashMap<String,Object> dsObject;  /*our datastructure to save*/
+  private DictionaryFilter dictFilter;  /*only process and store dictionary keys which follow this structure*/
+  private PersistToDatabaseInterface persistToDatabase; /*an interface which has to implement the saveObj() method for persisting*/ 
   /* a reference to the lexer object */
   private EntrezASNLexer lexer;
+
+  /* method to set debug flag */
+  public void setDebug() {
+	yydebug=true;
+  }
+
 
   /* interface to the lexer */
   private int yylex () {
@@ -45,11 +63,4 @@ input:   NEWGENE | NUMBER;
   public EntrezASNParser(Reader r) {
     lexer = new EntrezASNLexer(r, this);
   }
-
-  /* that's how you use the parser */
-  /*
-  public static void main(String args[]) throws IOException {
-    EntrezASNParser yyparser = new EntrezASNParser(new FileReader(args[0]));
-    yyparser.yyparse();    
-  }*/
 
